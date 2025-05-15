@@ -26,6 +26,18 @@ class Sll:
             a = a.next
         a.next = ne
         
+    def insert_at_position(self, val, pos):
+        print()
+        np = Node(val)
+        a = self.head
+        for i in range(1, pos-1):
+            a = a.next
+        np.next = a.next
+        a.next = np
+        
+    
+            
+        
             
 n1 = Node(5)
 sll = Sll()
@@ -43,3 +55,6 @@ sll.traversal()  # to print it together with the rest
 
 sll.insert_at_end(25) #calling the insert at the end
 sll.traversal ()
+
+sll.insert_at_position(12, 3)
+sll.traversal()
