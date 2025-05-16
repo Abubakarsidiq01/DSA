@@ -35,10 +35,33 @@ class Sll:
         np.next = a.next
         a.next = np
         
-    
-            
+    def deletion_at_beginning(self):
+        print()
+        a = self.head
+        self.head = a.next
+        a.next = None
         
-            
+    def deletion_at_end(self):
+        print()
+        prev = self.head
+        a = self.head.next
+        while a.next is not None:
+            a = a.next
+            prev = prev.next
+        prev.next = None
+
+    def deletion_at_position(self, pos):
+        print()
+        prev = self.head
+        a = self.head.next
+        for i in range(1, pos-1):
+            a = a.next
+            prev = prev.next
+        prev.next = a.next
+        a.next = None 
+        
+        
+                
 n1 = Node(5)
 sll = Sll()
 sll.head = n1
@@ -57,4 +80,13 @@ sll.insert_at_end(25) #calling the insert at the end
 sll.traversal ()
 
 sll.insert_at_position(12, 3)
+sll.traversal()
+
+sll.deletion_at_beginning()
+sll.traversal()
+
+sll.deletion_at_end()
+sll.traversal()
+
+sll.deletion_at_position(3)
 sll.traversal()
