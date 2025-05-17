@@ -22,6 +22,34 @@ class Dll:
         while a is not None:
             print(a.data, end="<--")
             a = a.prev
+            
+    def insertion_at_beginning(self, data):
+        print()
+        ns = Node(data)
+        a = self.head
+        a.prev = ns
+        ns.next = a
+        self.head = ns
+        
+    def insertion_at_end(self, data):
+        print()
+        ne = Node(data)
+        a = self.head
+        while a.next is not None:
+            a = a.next
+        a.next = ne
+        ne.prev = a
+    
+    def insertion_at_specified_node(self, position, data):
+        print()
+        nib = Node(data)
+        a = self.head
+        for i in range(1, position - 1):
+            a = a.next
+        nib.prev = a
+        nib.next = a.next
+        a.next.prev = nib 
+        a.next = nib
 
 n1 = Node(5)
 dll = Dll()
@@ -36,4 +64,16 @@ n4 = Node(20)
 n4.prev = n3 
 n3.next = n4
 dll.foward_traversal()
-dll.backward_traversal()            
+dll.backward_traversal() 
+
+dll.insertion_at_beginning(2)
+dll.foward_traversal()
+dll.backward_traversal()
+
+dll.insertion_at_end(25)
+dll.foward_traversal()
+dll.backward_traversal() 
+
+dll.insertion_at_specified_node(3, 7)
+dll.foward_traversal()
+dll.backward_traversal()                        
