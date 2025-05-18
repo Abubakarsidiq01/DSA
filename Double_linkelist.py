@@ -50,6 +50,35 @@ class Dll:
         nib.next = a.next
         a.next.prev = nib 
         a.next = nib
+        
+    def deletion_at_beginning(self):
+        print()
+        a = self.head
+        self.head = a.next
+        a.next = None
+        self.head.prev = None
+    
+    def deletion_at_end(self):
+        print()
+        a = self.head.next
+        prev = self.head
+        while a.next is not None:
+            a = a.next
+            prev = prev.next
+        prev.next = None
+        a.prev = None
+        
+    def deletion_at_specific(self, position):
+        print()
+        a = self.head.next
+        prev = self.head
+        for i in range(1, position - 1):
+            a = a.next
+            prev = prev.next
+        prev.next = a.next
+        a.next.prev = prev
+        a.next = None
+        a.prev = None
 
 n1 = Node(5)
 dll = Dll()
@@ -76,4 +105,16 @@ dll.backward_traversal()
 
 dll.insertion_at_specified_node(3, 7)
 dll.foward_traversal()
-dll.backward_traversal()                        
+dll.backward_traversal()   
+
+dll.deletion_at_beginning()
+dll.foward_traversal()
+dll.backward_traversal() 
+
+dll.deletion_at_end()    
+dll.foward_traversal()
+dll.backward_traversal() 
+
+dll.deletion_at_specific(3)
+dll.foward_traversal()
+dll.backward_traversal()                 
