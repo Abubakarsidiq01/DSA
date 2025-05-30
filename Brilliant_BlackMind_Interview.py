@@ -43,7 +43,10 @@ weather2 = ["Rain", "Sunny", "Sunny", "rain"]
 forecasts3 = ["Partially cloudy", "Rain", "Sunny", "Rain at times heavy"]
 weather3 = ["Rain", "Cloudy with rain", "Sunny", "rain"]
 
+forecasts4 = ["Cloudy with rain", "Mostly cloudy", "Sunny", "Rain"]
+weather4 = ["Rain", "Cloudy with rain", "Sunny", "Cloudy"]
 
 print(weather(forecasts1, weather1))
 print(weather(forecasts2, weather2))
 print(weather(forecasts3, weather3))
+print(weather(forecasts4, weather4))
