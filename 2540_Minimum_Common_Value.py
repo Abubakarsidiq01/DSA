@@ -22,3 +22,15 @@ sol = Solution()
 nums1 = [1,2,3]
 nums2 = [2,4]
 print(sol.getCommon(nums1, nums2))
+
+nums1 = [1,2,3,4]
+nums2 = [2,4,5]
+print(sol.getCommon(nums1, nums2))
+
+nums1 = [-1,1,2,3]
+nums2 = [1,4]
+print(sol.getCommon(nums1, nums2))
+
+nums1 = [2,4,6,8]
+nums2 = [1,3,5,7]
+print(sol.getCommon(nums1, nums2))
