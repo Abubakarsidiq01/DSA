@@ -21,4 +21,3 @@ print(obj.ping(1))
 print(obj.ping(100))
 print(obj.ping(3001))
 print(obj.ping(3002))
-
