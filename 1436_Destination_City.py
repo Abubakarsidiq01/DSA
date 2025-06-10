@@ -10,3 +10,11 @@ class Solution:
 paths = [["London","New York"],["New York","Lima"],["Lima","Sao Paulo"]]
 sol = Solution()
 print(sol.destCity(paths))
+
+paths = [["B","C"],["D","B"],["C","A"]]
+print(sol.destCity(paths))
+
+paths = [["A","B"]]
+print(sol.destCity(paths))
+
+
