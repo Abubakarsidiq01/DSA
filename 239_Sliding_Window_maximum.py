@@ -28,6 +28,15 @@ nums = [1,3,-1,-3,5,3,6,7]
 k = 3
 print(sol.maxSlidingWindow(nums, k))
 
+nums = [1]
+k = 1
+print(sol.maxSlidingWindow(nums, k))
+
+nums = [1,-1]
+k = 1
+print(sol.maxSlidingWindow(nums, k))
+
+
 
 """
 x = 0
