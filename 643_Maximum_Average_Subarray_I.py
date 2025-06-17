@@ -17,6 +17,9 @@ class Solution:
 solution = Solution()
 print(solution.findMaxAverage([1,12,-5,-6,50,3], 4))
 
+solution2 = Solution2()
+print(solution2.findMaxAverage([1,12,-5,-6,50,3], 4))
+
 """
 ans = float('-inf')
 left, right = 0, k - 1
