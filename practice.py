@@ -21,7 +21,7 @@ for i in range(3,7):
     print(ans[i])
 
 print(lst[:3])
-print(lst[1:])
+print(lst[3:])
 
 
 
