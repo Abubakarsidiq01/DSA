@@ -35,14 +35,14 @@ for j in range(cols):
     for i in range(rows):
         new_row.append(matrix[i][j])
     transposed.append(new_row)
-    
     print(new_row)
 print(transposed)
 
+print("Printing the diagonal of the matrix")
+for i in range(len(matrix)):
+    print(matrix[i][i])
 
-
-
-
-
-
-
+print("Printing the diagonal of the matrix")
+n = len(matrix)
+for i in range(n):
+    print(matrix[i][n - 1 - i])
