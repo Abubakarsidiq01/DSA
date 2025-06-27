@@ -46,3 +46,13 @@ print("Printing the diagonal of the matrix")
 n = len(matrix)
 for i in range(n):
     print(matrix[i][n - 1 - i])
+    
+print("Printing the matrix in a spiral order")
+for i in range(len(matrix)):
+    for j in range(len(matrix[0])):
+        print(matrix[i][j])
+
+print("Printing the matrix in a spiral order")
+for i in range(len(matrix)):
+    for j in range(len(matrix[0])):
+        print(matrix[i][j])
