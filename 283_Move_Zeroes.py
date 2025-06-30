@@ -13,3 +13,4 @@ class Solution:
 
 solution = Solution()
 print(solution.moveZeroes([0,1,0,3,12]))
+print(solution.moveZeroes([0]))
