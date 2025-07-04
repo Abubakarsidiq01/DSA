@@ -9,6 +9,7 @@ class Solution:
         return count
 solution = Solution()
 print(solution.waysToSplitArray([10,4,-8,7]))
+print(solution.waysToSplitArray([2,3,1,0]))
 
 """
 count = 0
