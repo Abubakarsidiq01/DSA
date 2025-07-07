@@ -11,23 +11,40 @@ class Node:
             self.data = data
         else:
             if data < self.data:
-                if self.data is None:
+                if self.left is None:
                     self.left = Node(data)
                 else:
                     self.left.insert(data)
             elif data > self.data:
-                if self.data is None:
-                    self.left = Node(data)
+                if self.right is None:
+                    self.right = Node(data)
                 else:
                     self.right.insert(data)
 
-def inorderPrint(r):
+def inorderPrint(r): # left, root, right -> ascending order(abc)
     if r is None:
         return
     else:
         inorderPrint(r.left)
-        print(r.data, end=" ")
+        print(r.data, end="->")
         inorderPrint(r.right)
+        
+def preorderPrint(r): # root, left, right -> root first(bac)
+    if r is None:
+        return
+    else:
+        print(r.data, end="->")
+        preorderPrint(r.left)
+        preorderPrint(r.right)
+
+def postorderPrint(r): # left, right, root -> last(acb)
+    if r is None:
+        return
+    else:
+        postorderPrint(r.left)
+        postorderPrint(r.right)
+        print(r.data, end="->")
+        
 
 root = Node("g")
 root.insert("c")
@@ -40,5 +57,14 @@ root.insert("h")
 root.insert("i")
 root.insert("j")
 root.insert("k")
-                
+
+# Print the tree in order
+print("Inorder:")
+inorderPrint(root)
+print()
+print("Preorder:")
+preorderPrint(root)
+print()
+print("Postorder:")
+postorderPrint(root)
     
