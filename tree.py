@@ -1,3 +1,4 @@
+import collections
 # Insert Function
 # 1. Define a tree
 class Node:
@@ -46,9 +47,47 @@ def postorderPrint(r): # left, right, root -> last(acb)
         postorderPrint(r.right)
         print(r.data, end="->")
         
-#
-        
+#adjacency list
+d = {}
+def makeList(r):
+    if r is None:
+        return
+    else:
+        d[r.data] = []
+        if r.left:
+            d[r.data].append(r.left.data)
+            makeList(r.left)
+        if r.right:
+            d[r.data].append(r.right.data)
+            makeList(r.right)
+    return d
 
+def bfs(r):
+    queue = collections.deque([r])
+    visited =  []
+    while queue:
+        node = queue.popleft()
+        visited.append(node.data)
+        if node.left:
+            queue.append(node.left)
+        if node.right:
+            queue.append(node.right)
+    return visited
+    
+def dfs(r):
+    stack = [r]
+    visited = []
+    while stack:
+        node = stack.pop()
+        visited.append(node.data)
+        if node.right:
+            stack.append(node.right)
+        if node.left:
+            stack.append(node.left)
+    return visited
+
+
+    
 root = Node("g")
 root.insert("c")
 root.insert("b")
@@ -56,8 +95,8 @@ root.insert("a")
 root.insert("e")
 root.insert("d")
 root.insert("f")
-root.insert("h")
 root.insert("i")
+root.insert("h")
 root.insert("j")
 root.insert("k")
 
@@ -70,4 +109,12 @@ preorderPrint(root)
 print()
 print("Postorder:")
 postorderPrint(root)
-    
+print()
+print("Adjacency List:")
+print(makeList(root))
+print()
+print("BFS:")
+print(bfs(root))
+print()
+print("DFS:")
+print(dfs(root))
