@@ -21,14 +21,6 @@ class Node:
                 else:
                     self.right.insert(data)
 
-def inorderPrint(r): # left, root, right -> ascending order(abc)
-    if r is None:
-        return
-    else:
-        inorderPrint(r.left)
-        print(r.data, end="->")
-        inorderPrint(r.right)
-        
 def preorderPrint(r): # root, left, right -> root first(bac)
     if r is None:
         return
@@ -37,6 +29,15 @@ def preorderPrint(r): # root, left, right -> root first(bac)
         preorderPrint(r.left)
         preorderPrint(r.right)
 
+def inorderPrint(r): # left, root, right -> ascending order(abc)
+    if r is None:
+        return
+    else:
+        inorderPrint(r.left)
+        print(r.data, end="->")
+        inorderPrint(r.right)
+        
+
 def postorderPrint(r): # left, right, root -> last(acb)
     if r is None:
         return
@@ -44,6 +45,8 @@ def postorderPrint(r): # left, right, root -> last(acb)
         postorderPrint(r.left)
         postorderPrint(r.right)
         print(r.data, end="->")
+        
+#
         
 
 root = Node("g")
