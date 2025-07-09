@@ -86,8 +86,32 @@ def dfs(r):
             stack.append(node.left)
     return visited
 
+def search(r, data):
+    if r is None:
+        return False
+    if r.data == data:
+        return True
+    if data < r.data:
+        return search(r.left, data)
+    else:
+        return search(r.right, data)
+"""
+def search2(r, key):
+    stack = [r]
+    visited = []
+    while stack:
+        node = stack.pop()
+        if node.data == key:
+            return True
+        if node not in visited:
+            visited.append(node)
+            if node.right:
+                stack.append(node.right)
+            if node.left:
+                stack.append(node.left)
+    return False
+"""
 
-    
 root = Node("g")
 root.insert("c")
 root.insert("b")
@@ -118,3 +142,14 @@ print(bfs(root))
 print()
 print("DFS:")
 print(dfs(root))
+print()
+print("Search:")
+print(search(root, "a"))
+print(search(root, "b"))
+print(search(root, "c"))
+print(search(root, "d"))
+print(search(root, "e"))
+print(search(root, "f"))
+print(search(root, "g"))
+print(search(root, "h"))
+print(search(root, "i"))
