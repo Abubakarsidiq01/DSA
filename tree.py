@@ -21,6 +21,13 @@ class Node:
                     self.right = Node(data)
                 else:
                     self.right.insert(data)
+def defs(r):
+    if r is None:
+        return
+    
+    defs(r.left)
+    defs(r.right)
+    print(r.data, end="->")
 
 def preorderPrint(r): # root, left, right -> root first(bac)
     if r is None:
@@ -95,7 +102,7 @@ def search(r, data):
         return search(r.left, data)
     else:
         return search(r.right, data)
-"""
+"""    
 def search2(r, key):
     stack = [r]
     visited = []
@@ -145,11 +152,6 @@ print(dfs(root))
 print()
 print("Search:")
 print(search(root, "a"))
-print(search(root, "b"))
-print(search(root, "c"))
-print(search(root, "d"))
-print(search(root, "e"))
-print(search(root, "f"))
-print(search(root, "g"))
-print(search(root, "h"))
-print(search(root, "i"))
+print()
+print("DFS:")
+print(defs(root))
