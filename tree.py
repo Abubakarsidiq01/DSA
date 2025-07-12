@@ -21,7 +21,7 @@ class Node:
                     self.right = Node(data)
                 else:
                     self.right.insert(data)
-def defs(r):
+def defs(r): # recursive dfs
     if r is None:
         return
     
@@ -153,5 +153,5 @@ print()
 print("Search:")
 print(search(root, "a"))
 print()
-print("DFS:")
+print("Recursive DFS:")
 print(defs(root))
