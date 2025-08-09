@@ -1,3 +1,4 @@
+from collections import Counter
 class Solution:
     def minSetSize(self, arr: list[int]) -> int:
         n = len(arr)
@@ -12,7 +13,11 @@ class Solution:
                 
                 break
         return count
-    sol = Solution()
-    print(sol.minSetSize([3,3,3,3,5,5,5,2,2,7]))
+sol = Solution()
+print(sol.minSetSize([3,3,3,3,5,5,5,2,2,7]))
+print(sol.minSetSize([7,7,7,7,7,7]))
+print(sol.minSetSize([1,2,3,4,5,6,7,8,9,10]))
+print(sol.minSetSize([1,1,1,1,1,1,1,1,1,1]))
+print(sol.minSetSize([1,1,1,1,1,1,1,1,1,1]))
 
     
