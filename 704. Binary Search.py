@@ -13,3 +13,5 @@ class Solution:
         return -1
 solution = Solution()
 print(solution.search([-1,0,3,5,9,12], 9))
+solution.search([-1,0,3,5,9,12], 2)
+print(solution.search([-1,0,3,5,9,12], 2))
