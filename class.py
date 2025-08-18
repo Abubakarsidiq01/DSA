@@ -1,11 +1,6 @@
-name = input("Enter your name: ")
-age = int(input("Enter your age: "))
-required_resident_age = int(input("Enter the required resident age: "))
+list = [1,2,3,4,5,6,7,8,9,10]
+print(5 * list)
 
-if age >= 45 and required_resident_age >= 15:
-    print(f"Hello {name}! You are {age} years old and you are eligible to be a USA president.")
-else:
-    print(f"Hello {name}! You are {age} years old and you are not eligible to be a USA president.")
 
 
 
